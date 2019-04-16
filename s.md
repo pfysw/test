@@ -19,11 +19,11 @@
             
 $$ f=\left\{
 \begin{aligned}
-1 \rightarrow & 3\\撒  
-2 \rightarrow & 4 \\  
-3 \rightarrow & 1 \\     
-4 \rightarrow & 2 \\    
-5 \rightarrow & 5\\       
+1 \rightarrow & 3 \\\
+2 \rightarrow & 4 \\\  
+3 \rightarrow & 1 \\\     
+4 \rightarrow & 2 \\\    
+5 \rightarrow & 5       
 \end{aligned}
 \right.
 $$    
@@ -31,7 +31,7 @@ $$
 简记为
 $$
 \begin{pmatrix}
-1 & 2 &  3&4  &5 \\ 
+1 & 2 &  3&4  &5 \\\ 
 3&  4& 1 & 2 & 5
 \end{pmatrix}
 $$
