@@ -1,4 +1,4 @@
-﻿test
+﻿<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>  
 
 # 前言
 之前做了一个四国军棋软件，做到最后发现工作量已经爆炸了，我需要去寻找一个全新的算法来减少工作量，所谓深度学习的算法也许有效果但是对于没有计算资源的人来说并不适用。  
@@ -15,38 +15,21 @@
 ## 1.1  置换
 先来定义置换的概念，这里不用数学语言来精确定义，只举实际例子把这个概念说的相对明白就可以了。 
           
-现在有一个5元排列（1 2 3 4 5），我们把这排列中的5个元素随便调换一下顺序就可以得到另外一个排列了，比如把2和4交换，1和3交换得到另一个排列（3,4,1,2,5），我们可以把置换用映射表示  
-            
+现在有一个5元排列（1 2 3 4 5），我们把这排列中的5个元素随便调换一下顺序就可以得到另外一个排列了，比如把2和4交换，1和3交换得到另一个排列（3,4,1,2,5），我们可以把置换用映射表示           
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=f=\left\{\begin{aligned}&space;1\rightarrow&space;&&space;3\\&space;2\rightarrow&space;&&space;4&space;\\&space;3\rightarrow&space;&&space;1&space;\\&space;4\rightarrow&space;&&space;2&space;\\&space;5\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?f=\left\{\begin{aligned}&space;1\rightarrow&space;&&space;3\\&space;2\rightarrow&space;&&space;4&space;\\&space;3\rightarrow&space;&&space;1&space;\\&space;4\rightarrow&space;&&space;2&space;\\&space;5\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right." title="f=\left\{\begin{aligned} 1\rightarrow & 3\\ 2\rightarrow & 4 \\ 3\rightarrow & 1 \\ 4\rightarrow & 2 \\ 5\rightarrow & 5\\ \end{aligned} \right." /></a>  
  
-
-![](https://latex.codecogs.com/gif.latex?f=\left\{&space;\begin{aligned}&space;1&space;\rightarrow&space;&&space;3\\&space;2&space;\rightarrow&space;&&space;4&space;\\&space;3&space;\rightarrow&space;&&space;1&space;\\&space;4&space;\rightarrow&space;&&space;2&space;\\&space;5&space;\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right.)
-
-<a href="https://www.codecogs.com/eqnedit.php?latex=f=\left\{\begin{aligned}&space;1\rightarrow&space;&&space;3\\&space;2\rightarrow&space;&&space;4&space;\\&space;3\rightarrow&space;&&space;1&space;\\&space;4\rightarrow&space;&&space;2&space;\\&space;5\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?f=\left\{\begin{aligned}&space;1\rightarrow&space;&&space;3\\&space;2\rightarrow&space;&&space;4&space;\\&space;3\rightarrow&space;&&space;1&space;\\&space;4\rightarrow&space;&&space;2&space;\\&space;5\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right." title="f=\left\{\begin{aligned} 1\rightarrow & 3\\ 2\rightarrow & 4 \\ 3\rightarrow & 1 \\ 4\rightarrow & 2 \\ 5\rightarrow & 5\\ \end{aligned} \right." /></a>
-
-![](http://latex.codecogs.com/gif.latex?\frac{1}{1+sin(x)})
 简记为
-$$
-\begin{pmatrix}
-1 & 2 &  3&4  &5 \\\ 
-3&  4& 1 & 2 & 5
-\end{pmatrix}
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\\&space;3&&space;4&&space;1&space;&&space;2&space;&&space;5&space;\end{pmatrix}&space;$$" title="$$ \begin{pmatrix} 1 & 2 & 3&4 &5 \\\ 3& 4& 1 & 2 & 5 \end{pmatrix} $$" />   
      
-还有一种更简单的记法，例如把（1 2 3 4 5）的这个排列的每个元素都向左移动一个位置得到置换          
-$$
-\begin{pmatrix}
-1 & 2 &  3&4  &5 \\ 
-2&  3& 4 & 5 & 1
-\end{pmatrix}
-$$        
+还有一种更简单的记法，例如把（1 2 3 4 5）的这个排列的每个元素都向左移动一个位置得到置换             
+<img src="https://latex.codecogs.com/gif.latex?$$&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;2&&space;3&&space;4&space;&&space;5&space;&&space;1&space;\end{pmatrix}&space;$$" title="$$ \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 2& 3& 4 & 5 & 1 \end{pmatrix} $$" />  
+      
 这种置换称作轮换，反复映射后可以得到1->2->3->4->5->1,可以直接用轮换中的任一个排列表示即（1 2 3 4 5）       
-每一个置换都可以表示成一些轮换的组合，例如     
-$$
-\begin{pmatrix}
-1 & 2 &  3&4  &5 \\ 
- 3&  4& 1 & 2 & 5
-\end{pmatrix}
-$$      
+每一个置换都可以表示成一些轮换的组合，例如    
+
+<img src="https://latex.codecogs.com/gif.latex?$$&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;3&&space;4&&space;1&space;&&space;2&space;&&space;5&space;\end{pmatrix}&space;$$" title="$$ \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 3& 4& 1 & 2 & 5 \end{pmatrix} $$" />    
+ 
 可以表示为(1 3)(2 4)(5),即1和3轮换，2和4轮换，5不变，寻找轮换的方法是:     
 1->3->1,2->4->2,从起始位置开始反复映射，回到自身就是一个轮换。
 ## 1.2 群
@@ -63,20 +46,7 @@ $$
      
 即   
  
-$$
-\begin{pmatrix}
-1 & 2 &  3&4  &5 \\ 
- 2&  3& 4 & 5 & 1
-\end{pmatrix}\cdot 
-\begin{pmatrix}
-1 & 2 &  3&4  &5 \\ 
- 3& 4& 1 & 2 &5
-\end{pmatrix} =
-\begin{pmatrix}
-1 & 2 &  3&4  &5 \\ 
- 4&  5& 2 & 3 & 1
-\end{pmatrix}
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;2&&space;3&&space;4&space;&&space;5&space;&&space;1&space;\end{pmatrix}\cdot&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;3&&space;4&&space;1&space;&&space;2&space;&5&space;\end{pmatrix}&space;=&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;4&&space;5&&space;2&space;&&space;3&space;&&space;1&space;\end{pmatrix}&space;$$" title="$$ \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 2& 3& 4 & 5 & 1 \end{pmatrix}\cdot \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 3& 4& 1 & 2 &5 \end{pmatrix} = \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 4& 5& 2 & 3 & 1 \end{pmatrix} $$" />
 
 接下来将用代码证明置换满足群的4条性质，证明第1条性质时需要对置换的概念做一些额外的说明，并写一个函数判断这个元素是不是置换，这个性质是显然满足的，并且写成代码并不会更加清晰所以略去，所以主要证明的是第2,3,4条性质
 # 2  代码实现
