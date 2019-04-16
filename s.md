@@ -19,11 +19,11 @@
             
 $$ f=\left\{     
 \begin{aligned}         
-1 \rightarrow & 3 \\\
-2 \rightarrow & 4 \\\
-3 \rightarrow & 1 \\\  
-4 \rightarrow & 2 \\\    
-5 \rightarrow & 5 \\\     
+1 \rightarrow & 3 \\\\
+2 \rightarrow & 4 \\\\
+3 \rightarrow & 1 \\\\ 
+4 \rightarrow & 2 \\\\   
+5 \rightarrow & 5 \\\\   
 \end{aligned}
 \right.
 $$    
