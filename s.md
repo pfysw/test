@@ -103,7 +103,7 @@ typedef struct FivePerm
 ```
 
 下面来新建一个置换群的OperateSys的对象
- ```c
+```c
  OperateSys *PermutationObj(void)
 {
   //(1 2 3 4 5)作为单位元
