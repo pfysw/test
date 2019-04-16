@@ -244,9 +244,9 @@ $$
 \end{aligned} \tag{1}
 $$
 即置换的乘法运算与其2个元素交换后的共轭运算是相等的，那么为什么会相等呢，我们先用代码来实现共轭运算，上面举的例子容易搞混，我再举一个典型的例子，
-<center>
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416120839733.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
-</center>
+
 
 按照上图得到代码的具体实现
 ```c
