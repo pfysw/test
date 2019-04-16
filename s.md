@@ -17,13 +17,13 @@
           
 现在有一个5元排列（1 2 3 4 5），我们把这排列中的5个元素随便调换一下顺序就可以得到另外一个排列了，比如把2和4交换，1和3交换得到另一个排列（3,4,1,2,5），我们可以把置换用映射表示  
             
-$$ f=\left\{
-\begin{aligned}
+$$ f=\left\{     
+\begin{aligned}         
 1 \rightarrow & 3 \\\
-2 \rightarrow & 4 \\\  
-3 \rightarrow & 1 \\\     
+2 \rightarrow & 4 \\\
+3 \rightarrow & 1 \\\  
 4 \rightarrow & 2 \\\    
-5 \rightarrow & 5       
+5 \rightarrow & 5 \\\     
 \end{aligned}
 \right.
 $$    
