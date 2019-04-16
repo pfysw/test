@@ -19,7 +19,7 @@
             
  
 
-https://latex.codecogs.com/gif.latex?f=\left\{&space;\begin{aligned}&space;1&space;\rightarrow&space;&&space;3\\&space;2&space;\rightarrow&space;&&space;4&space;\\&space;3&space;\rightarrow&space;&&space;1&space;\\&space;4&space;\rightarrow&space;&&space;2&space;\\&space;5&space;\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right.    
+![](https://latex.codecogs.com/gif.latex?f=\left\{&space;\begin{aligned}&space;1&space;\rightarrow&space;&&space;3\\&space;2&space;\rightarrow&space;&&space;4&space;\\&space;3&space;\rightarrow&space;&&space;1&space;\\&space;4&space;\rightarrow&space;&&space;2&space;\\&space;5&space;\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right.)
 
 ![](http://latex.codecogs.com/gif.latex?\frac{1}{1+sin(x)})
 简记为
