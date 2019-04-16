@@ -15,7 +15,7 @@
           
 现在有一个5元排列（1 2 3 4 5），我们把这排列中的5个元素随便调换一下顺序就可以得到另外一个排列了，比如把2和4交换，1和3交换得到另一个排列（3,4,1,2,5），我们可以把置换用映射表示          
 
-$$ f=\left\{
+$$ f=\{
 \begin{aligned}
 1  \rightarrow & 3\\
 2  \rightarrow & 4 \\
@@ -23,21 +23,30 @@ $$ f=\left\{
 4  \rightarrow & 2 \\
 5  \rightarrow & 5\\
 \end{aligned}
-\right.
 $$
 简记为
 $$
 \begin{pmatrix}
 1 & 2 &  3&4  &5 \\ 
- 3&  4& 1 & 2 & 5
+3&  4& 1 & 2 & 5
 \end{pmatrix}
 $$
 
+
+$$
+\begin{aligned}
+&
+\begin{pmatrix}
+1 & 2 &  3&4  &5 \\ 
+ 2&  3& 4 & 5 & 1
+\end{pmatrix}
+\end{aligned} \tag{1}
+$$
 还有一种更简单的记法，例如把（1 2 3 4 5）的这个排列的每个元素都向左移动一个位置得到置换       
 $$
 \begin{pmatrix}
 1 & 2 &  3&4  &5 \\ 
- 2&  3& 4 & 5 & 1
+2&  3& 4 & 5 & 1
 \end{pmatrix}
 $$
 这种置换称作轮换，反复映射后可以得到1->2->3->4->5->1,可以直接用轮换中的任一个排列表示即（1 2 3 4 5）       
@@ -216,9 +225,9 @@ FivePerm *FivePermOp(FivePerm *p1, FivePerm *p2)
 }
 ```
 对于置换集合可以再定义一个共轭运算{}，我们来计算 (1 3)(2 4)(5) $\circ$（1 2 3 4 5），其运算结果如下，先写出右元的置换，再把左元写成轮换形式，右元的结果根据左元进行轮换
-<center>
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416112857603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
-</center>
+
 这里我们发现以下等式成立，记为公式(1)
 $$
 \begin{aligned}
