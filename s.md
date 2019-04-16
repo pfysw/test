@@ -21,6 +21,8 @@
 
 ![](https://latex.codecogs.com/gif.latex?f=\left\{&space;\begin{aligned}&space;1&space;\rightarrow&space;&&space;3\\&space;2&space;\rightarrow&space;&&space;4&space;\\&space;3&space;\rightarrow&space;&&space;1&space;\\&space;4&space;\rightarrow&space;&&space;2&space;\\&space;5&space;\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right.)
 
+<a href="https://www.codecogs.com/eqnedit.php?latex=f=\left\{\begin{aligned}&space;1\rightarrow&space;&&space;3\\&space;2\rightarrow&space;&&space;4&space;\\&space;3\rightarrow&space;&&space;1&space;\\&space;4\rightarrow&space;&&space;2&space;\\&space;5\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?f=\left\{\begin{aligned}&space;1\rightarrow&space;&&space;3\\&space;2\rightarrow&space;&&space;4&space;\\&space;3\rightarrow&space;&&space;1&space;\\&space;4\rightarrow&space;&&space;2&space;\\&space;5\rightarrow&space;&&space;5\\&space;\end{aligned}&space;\right." title="f=\left\{\begin{aligned} 1\rightarrow & 3\\ 2\rightarrow & 4 \\ 3\rightarrow & 1 \\ 4\rightarrow & 2 \\ 5\rightarrow & 5\\ \end{aligned} \right." /></a>
+
 ![](http://latex.codecogs.com/gif.latex?\frac{1}{1+sin(x)})
 简记为
 $$
