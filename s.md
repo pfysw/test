@@ -57,7 +57,7 @@ $$
 1 & 2 &  3&4  &5 \\ 
  3&  4& 1 & 2 & 5
 \end{pmatrix}
-$$
+$$      
 可以表示为(1 3)(2 4)(5),即1和3轮换，2和4轮换，5不变，寻找轮换的方法是:     
 1->3->1,2->4->2,从起始位置开始反复映射，回到自身就是一个轮换。
 ## 1.2 群
@@ -68,10 +68,10 @@ $$
  3. 有单位元e，即 对于任意的a，存在单位元e使得  $e\cdot a= a$
  4. 有左逆元，即对于任意的a，存在b满足$b\cdot a= e$,那么b叫做a的左逆元
  
-一般来说群并没有规定运算要满足交换律，下面来说明上面定义的置换是群，首先定义置换的运算{$\cdot$}如下，例如（1 2 3 4 5）$\cdot$ (1 3)(2 4)(5)的计算结果如下
+一般来说群并没有规定运算要满足交换律，下面来说明上面定义的置换是群，首先定义置换的运算{$\cdot$}如下，例如（1 2 3 4 5）$\cdot$ (1 3)(2 4)(5)的计算结果如下    
 
- ![在这里插入图片描述](./1.png)    
- 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416095726217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)       
+     
 即   
  
 $$
@@ -229,7 +229,7 @@ FivePerm *FivePermOp(FivePerm *p1, FivePerm *p2)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416112857603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
 
-这里我们发现以下等式成立，记为公式(1)
+这里我们发现以下等式成立，记为公式(1)      
 $$
 \begin{aligned}
 &
@@ -253,7 +253,7 @@ $$
  4&  5& 2 & 3 & 1
 \end{pmatrix} 
 \end{aligned} \tag{1}
-$$
+$$     
 即置换的乘法运算与其2个元素交换后的共轭运算是相等的，那么为什么会相等呢，我们先用代码来实现共轭运算，上面举的例子容易搞混，我再举一个典型的例子，
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416120839733.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
