@@ -182,7 +182,7 @@ FivePerm *FivePermOp(FivePerm *p1, FivePerm *p2)
     return p;
 }
 ```
-对于置换集合可以再定义一个共轭运算{○}，我们来计算 (1 3)(2 4)(5) ○（1 2 3 4 5），其运算结果如下，先写出右元的置换，再把左元写成轮换形式，右元的结果根据左元进行轮换
+对于置换集合可以再定义一个共轭运算{◦}，我们来计算 (1 3)(2 4)(5) ◦（1 2 3 4 5），其运算结果如下，先写出右元的置换，再把左元写成轮换形式，右元的结果根据左元进行轮换
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416112857603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
 
