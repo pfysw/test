@@ -31,14 +31,14 @@
 可以表示为(1 3)(2 4)(5),即1和3轮换，2和4轮换，5不变，寻找轮换的方法是:     
 1->3->1,2->4->2,从起始位置开始反复映射，回到自身就是一个轮换。
 ## 1.2 群
-群是由一个集合中的元素比如集合A={a,b,c,d....}和运算{$\cdot$}组成的，要注意的是集合中的元素不一定是数字，运算也不一定是乘法，集合和运算具体代表什么需要你自己定义。这些元素的运算必须满足下面4个条件才能称作群     
+群是由一个集合中的元素比如集合A={a,b,c,d....}和运算{・}组成的，要注意的是集合中的元素不一定是数字，运算也不一定是乘法，集合和运算具体代表什么需要你自己定义。这些元素的运算必须满足下面4个条件才能称作群     
 
  1. 运算封闭，即<img src="https://latex.codecogs.com/gif.latex?$a\cdot&space;b$" title="$a\cdot b$" />的结果仍在A中
  2. 结合律，即<img src="https://latex.codecogs.com/gif.latex?$(a\cdot&space;b)\cdot&space;c&space;=a\cdot&space;(b\cdot&space;c)$" title="$(a\cdot b)\cdot c =a\cdot (b\cdot c)$" />
  3. 有单位元e，即 对于任意的a，存在单位元e使得  <img src="https://latex.codecogs.com/gif.latex?$e\cdot&space;a=&space;a$" title="$e\cdot a= a$" />
  4. 有左逆元，即对于任意的a，存在b满足<img src="https://latex.codecogs.com/gif.latex?$b\cdot&space;a=&space;e$" title="$b\cdot a= e$" />,那么b叫做a的左逆元
  
-一般来说群并没有规定运算要满足交换律，下面来说明上面定义的置换是群，首先定义置换的运算{$\cdot$}如下，例如（1 2 3 4 5）$\cdot$ (1 3)(2 4)(5)的计算结果如下    
+一般来说群并没有规定运算要满足交换律，下面来说明上面定义的置换是群，首先定义置换的运算{・}如下，例如（1 2 3 4 5）・ (1 3)(2 4)(5)的计算结果如下    
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416095726217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)       
      
@@ -73,7 +73,7 @@ typedef struct FivePerm
 ```
 
 下面来新建一个置换群的OperateSys的对象
-```c {.line-numbers}
+```c
  OperateSys *PermutationObj(void)
 {
   //(1 2 3 4 5)作为单位元
@@ -104,7 +104,7 @@ typedef struct FivePerm
 ## 2.2 置换生成
 置换是一个集合，为了实现这个代数运算系统，我们首先要生成置换的所有元素，以5个元素的置换为例，这些元素就是(1 2 3 4 5)的一个全排列，全排列总共有120个，所以输入范围从0~119，生成算法采用的是递归的思想，第1个数字可能的取值为1,2,3,4,5五种，确定第1个数字之后，下面进行递归调用求得剩下4个数字的全排列
 
-```c{class=line-numbers}
+```c
 //pPerm为初始输入元素为(1 2 3 4 5)
 //left表示置换中最左边的一个元素，
 //right表示置换中最右边的一个元素
@@ -182,12 +182,12 @@ FivePerm *FivePermOp(FivePerm *p1, FivePerm *p2)
     return p;
 }
 ```
-对于置换集合可以再定义一个共轭运算{}，我们来计算 (1 3)(2 4)(5) $\circ$（1 2 3 4 5），其运算结果如下，先写出右元的置换，再把左元写成轮换形式，右元的结果根据左元进行轮换
+对于置换集合可以再定义一个共轭运算{○}，我们来计算 (1 3)(2 4)(5) ○（1 2 3 4 5），其运算结果如下，先写出右元的置换，再把左元写成轮换形式，右元的结果根据左元进行轮换
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416112857603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
 
 这里我们发现以下等式成立，记为公式(1)      
-<img src="https://latex.codecogs.com/gif.latex?$$&space;\begin{aligned}&space;&&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;2&&space;3&&space;4&space;&&space;5&space;&&space;1&space;\end{pmatrix}\cdot&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;3&&space;4&&space;1&space;&&space;2&space;&5&space;\end{pmatrix}&space;\\&space;=&&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;3&&space;4&&space;1&space;&&space;2&space;&5&space;\end{pmatrix}\circ\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;2&&space;3&&space;4&space;&&space;5&space;&&space;1&space;\end{pmatrix}\\&space;=&\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;4&&space;5&&space;2&space;&&space;3&space;&&space;1&space;\end{pmatrix}&space;\end{aligned}&space;\tag{1}&space;$$" title="$$ \begin{aligned} & \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 2& 3& 4 & 5 & 1 \end{pmatrix}\cdot \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 3& 4& 1 & 2 &5 \end{pmatrix} \\ =& \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 3& 4& 1 & 2 &5 \end{pmatrix}\circ\begin{pmatrix} 1 & 2 & 3&4 &5 \\ 2& 3& 4 & 5 & 1 \end{pmatrix}\\ =&\begin{pmatrix} 1 & 2 & 3&4 &5 \\ 4& 5& 2 & 3 & 1 \end{pmatrix} \end{aligned} \tag{1} $$" /> 
+<img src="https://latex.codecogs.com/gif.latex?$$&space;\begin{aligned}&space;&&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;2&&space;3&&space;4&space;&&space;5&space;&&space;1&space;\end{pmatrix}\cdot&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;3&&space;4&&space;1&space;&&space;2&space;&5&space;\end{pmatrix}&space;\\&space;=&&space;\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;3&&space;4&&space;1&space;&&space;2&space;&5&space;\end{pmatrix}\circ\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;2&&space;3&&space;4&space;&&space;5&space;&&space;1&space;\end{pmatrix}\\&space;=&\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3&4&space;&5&space;\\&space;4&&space;5&&space;2&space;&&space;3&space;&&space;1&space;\end{pmatrix}&space;\end{aligned}&space;\qquad&space;\qquad&space;(1)&space;$$" title="$$ \begin{aligned} & \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 2& 3& 4 & 5 & 1 \end{pmatrix}\cdot \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 3& 4& 1 & 2 &5 \end{pmatrix} \\ =& \begin{pmatrix} 1 & 2 & 3&4 &5 \\ 3& 4& 1 & 2 &5 \end{pmatrix}\circ\begin{pmatrix} 1 & 2 & 3&4 &5 \\ 2& 3& 4 & 5 & 1 \end{pmatrix}\\ =&\begin{pmatrix} 1 & 2 & 3&4 &5 \\ 4& 5& 2 & 3 & 1 \end{pmatrix} \end{aligned} \qquad \qquad (1) $$" />     
 即置换的乘法运算与其2个元素交换后的共轭运算是相等的，那么为什么会相等呢，我们先用代码来实现共轭运算，上面举的例子容易搞混，我再举一个典型的例子，
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190416120839733.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BmeXN3,size_16,color_FFFFFF,t_70)
