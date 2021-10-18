@@ -1,0 +1,12 @@
+使用BitBlt函数实现绘制透明位图
+https://www.write-bug.com/article/1952.html
+位图(bmp)文件格式分析
+https://blog.csdn.net/aidem_brown/article/details/80500637
+bitmap格式分析
+https://www.cnblogs.com/CZM-/p/5388553.html
+win32 - 关于GDI的RGB的数据分析
+https://www.cnblogs.com/strive-sun/p/14115809.html
+CreateDIBSection 函数详解
+https://blog.csdn.net/weixin_39345003/article/details/83503567
+IB位图(Bitmap)的读取和保存 - 史D芬周 - 博客园
+https://www.cnblogs.com/weekbo/p/9583798.html
