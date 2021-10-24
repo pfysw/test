@@ -1,0 +1,20 @@
+使用BitBlt函数实现绘制透明位图
+https://www.write-bug.com/article/1952.html
+位图(bmp)文件格式分析
+https://blog.csdn.net/aidem_brown/article/details/80500637
+bitmap格式分析
+https://www.cnblogs.com/CZM-/p/5388553.html
+win32 - 关于GDI的RGB的数据分析
+https://www.cnblogs.com/strive-sun/p/14115809.html
+CreateDIBSection 函数详解
+https://blog.csdn.net/weixin_39345003/article/details/83503567
+IB位图(Bitmap)的读取和保存 - 史D芬周 - 博客园
+https://www.cnblogs.com/weekbo/p/9583798.html
+OpenGL（三） RGBA颜色设置
+https://blog.csdn.net/dcrmg/article/details/53073838
+CreateDIBSection 函数详解
+https://blog.csdn.net/weixin_39345003/article/details/83503567
+一般来说，.bMP文件的数据从下到上，从左到右的。也就是说，从文件中最先读到的是图象最下面一行的左边第一个象素，
+然后是左边第二个象素……接下来是倒数第二行左边第一个象素，左边第二个象素……依次类推 ，最后得到的是最上面一行的最右一个象素。
+Windows DIB文件操作具体解释-4.使用DIB Section
+https://www.cnblogs.com/yxwkf/p/5423831.html
